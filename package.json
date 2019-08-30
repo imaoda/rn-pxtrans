@@ -1,6 +1,6 @@
 {
   "name": "rn-pxtrans",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "将 750 设计稿的尺寸,自动转成实际像素,(开发时,可直接按 750 尺寸写样式)",
   "main": "index.js",
   "repository": "https://github.com/imaoda/rn-pxtrans.git",

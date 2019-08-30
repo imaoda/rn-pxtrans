@@ -1,8 +1,8 @@
 let deviceWidthDp = 0;
 let baseWidth = 750;
 
-const reg1 = /(width|height|radius|size|top|bottom|left|right|flexBasis|margin|padding)/gim
-const reg2 = /shadowOffset$/gim
+const reg1 = /(width|height|radius|size|top|bottom|left|right|flexBasis|margin|padding)/i
+const reg2 = /shadowOffset$/i
 
 export function pxTrans(width) {
   return deviceWidthDp * width / baseWidth;
@@ -25,7 +25,7 @@ export function styleTrans(obj) {
           if (typeof item.translateY === 'number') item.translateY = pxTrans(item.translateY)
         });
       }
-      if (reg1.test(cssName) && typeof cssValue === 'number' && !isNaN(cssName)) {
+      if (reg1.test(cssName) && typeof cssValue === 'number' && !isNaN(cssValue)) {
         style[cssName] = pxTrans(cssValue)
       }
       if (reg2.test(cssName)) {
