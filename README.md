@@ -8,25 +8,6 @@
 
 已支持 Typescript
 
-### 初始化
-
-在 RN 程序初始化的地方，进行转换的初始化，即在进入页面前初始化即可，比如在入口文件 `index.tsx` 或者路由定义文件 `routes.tsx` 或者根路由 `App.tsx`
-
-```js
-import { initTrans } from 'rn-pxtrans'
-import { Dimensions, StyleSheet } from 'react-native'
-
-initTrans(StyleSheet, Dimensions)
-```
-
-假设我们的设计稿是 640，我们在 initTrans 的时候显示传入 *(缺省是 750)*
-
-```js
-initTrans(StyleSheet, Dimensions, 640)
-```
-
-> 注，这里之所以还要显示传递一遍 StyleSheet Dimensions，而不直接在 initTrans 里集成，是因为好多公司会对 RN 进行二次封装
-
 ### create 方法将实现自动转换 (无需额外配置)
 
 初始化之后，任意 create 里的尺寸数据，自动按照 750 设计稿算

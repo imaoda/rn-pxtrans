@@ -1,5 +1,7 @@
-let deviceWidthDp = 0;
-let baseWidth = 750;
+import { StyleSheet, Dimensions } from 'react-native'
+
+deviceWidthDp = Dimensions.get('window').width;
+const baseWidth = 750
 
 const reg1 = /(width|height|radius|size|top|bottom|left|right|flexBasis|margin|padding)/i
 const reg2 = /shadowOffset$/i
@@ -37,14 +39,6 @@ export function styleTrans(obj) {
   return newObj
 }
 
-let SS = { create: () => { } }
-
 export function create(obj) {
-  return SS.create(styleTrans(obj))
-}
-
-export function initTrans(StyleSheet, Dimensions, size = 750) {
-  deviceWidthDp = Dimensions.get('window').width;
-  baseWidth = size
-  SS = StyleSheet
+  return StyleSheet.create(styleTrans(obj))
 }

@@ -20,7 +20,7 @@ export function styleTrans<T extends NStyle.NamedStyles<T>>(styles: T): T
  * @param Dimensions 引自 react-native 库
  * @param size 可选，默认 750
  */
-export function initTrans(StyleSheet: any, Dimensions: any, size: number = 750): void
+// export function initTrans(StyleSheet: any, Dimensions: any, size: number = 750): void
 
 declare type RegisteredStyle<T> = number & { __registeredStyleBrand: T };
 export function create<T extends NStyle.NamedStyles<T>>(styles: T): { [P in keyof T]: RegisteredStyle<T[P]> };
