@@ -1,9 +1,9 @@
 {
-  "name": "mrn-pxtrans",
+  "name": "rn-pxtrans",
   "version": "0.0.2",
   "description": "将 750 设计稿的尺寸,自动转成实际像素,(开发时,可直接按 750 尺寸写样式)",
   "main": "index.js",
-  "repository": "https://github.com/imaoda/mrn-pxtrans.git",
+  "repository": "https://github.com/imaoda/rn-pxtrans.git",
   "author": "王永峰",
   "license": "MIT",
   "dependencies": {
