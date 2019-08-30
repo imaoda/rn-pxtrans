@@ -23,4 +23,4 @@ export function styleTrans<T extends NStyle.NamedStyles<T>>(styles: T): T
 export function initTrans(StyleSheet: any, Dimensions: any, size: number = 750): void
 
 declare type RegisteredStyle<T> = number & { __registeredStyleBrand: T };
-export function createcreate<T extends NStyle.NamedStyles<T>>(styles: T): { [P in keyof T]: RegisteredStyle<T[P]> };
+export function create<T extends NStyle.NamedStyles<T>>(styles: T): { [P in keyof T]: RegisteredStyle<T[P]> };

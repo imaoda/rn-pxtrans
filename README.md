@@ -6,6 +6,8 @@
 
 ## 开始使用
 
+已支持 Typescript
+
 ### 初始化
 
 在 RN 程序初始化的地方，进行转换的初始化，即在进入页面前初始化即可，比如在入口文件 `index.tsx` 或者路由定义文件 `routes.tsx` 或者根路由 `App.tsx`
@@ -25,13 +27,15 @@ initTrans(StyleSheet, Dimensions, 640)
 
 > 注，这里之所以还要显示传递一遍 StyleSheet Dimensions，而不直接在 initTrans 里集成，是因为好多公司会对 RN 进行二次封装
 
-### StyleSheet.create 方法将实现自动转换 (无需额外配置)
+### create 方法将实现自动转换 (无需额外配置)
 
-初始化之后，任意 StyleSheet.create 里的尺寸数据，自动按照 750 设计稿算
+初始化之后，任意 create 里的尺寸数据，自动按照 750 设计稿算
+
+使用 rn-pxtrans 里的 create 替代原有的 StyleSheet.create
 
 ### 内联样式需手动加入
 
-非 StyleSheet.create 创建的样式，比如直接在 jsx 直接写的 style，还是需要转换
+非 create 创建的样式，比如直接在 jsx 直接写的 style，还是需要转换
 
 ```jsx
 import { styleTrans } from 'rn-pxtrans'
@@ -52,8 +56,8 @@ const Home = () => <View style={{ height: pxTrans(100), width: 100 }}>...</View>
 在有些时候，整体需要转换，但个别的属性我们希望使用原始的 px，此时，只需用 noTrans 包裹个别的尺寸即可
 
 ```js
-import { noTrans } from 'rn-pxtrans'
-StyleSheet.create({
+import { noTrans, create } from 'rn-pxtrans'
+create({
   height: 100,
   width: 100,
   borderRadius: noTrans(2) // 依旧保留 2px
