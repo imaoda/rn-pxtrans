@@ -34,6 +34,7 @@ export function styleTrans(obj) {
       }
     })
   })
+  return newObj
 }
 
 let SS = { create: () => { } }
