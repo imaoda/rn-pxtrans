@@ -40,8 +40,7 @@ export function styleTrans(obj) {
 let SS = { create: () => { } }
 
 export function create(obj) {
-  const oldCreate = SS.create
-  return oldCreate.call(SS, styleTrans(obj))
+  return SS.create(styleTrans(obj))
 }
 
 export function initTrans(StyleSheet, Dimensions, size = 750) {
