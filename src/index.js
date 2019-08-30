@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native'
 
-deviceWidthDp = Dimensions.get('window').width;
+const deviceWidthDp = Dimensions.get('window').width;
 const baseWidth = 750
 
 const reg1 = /(width|height|radius|size|top|bottom|left|right|flexBasis|margin|padding)/i
