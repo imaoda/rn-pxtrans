@@ -36,15 +36,15 @@ export function styleTrans(obj) {
   })
 }
 
+let SS = { create: () => { } }
 
+export function create() {
+  const oldCreate = SS.create
+  oldCreate.call(SS, styleTrans(obj))
+}
 
 export function initTrans(StyleSheet, Dimensions, size = 750) {
   deviceWidthDp = Dimensions.get('window').width;
   baseWidth = size
-
-  // 劫持 StyleSheet
-  const oldCreate = StyleSheet.create
-  StyleSheet.create = function (obj) {
-    oldCreate.apply(StyleSheet, styleTrans(obj))
-  }
+  SS = StyleSheet
 }
