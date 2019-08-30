@@ -38,7 +38,7 @@ export function styleTrans(obj) {
 
 let SS = { create: () => { } }
 
-export function create() {
+export function create(obj) {
   const oldCreate = SS.create
   oldCreate.call(SS, styleTrans(obj))
 }
