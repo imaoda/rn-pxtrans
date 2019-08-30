@@ -12,7 +12,7 @@ export function noTrans(width) {
   return baseWidth * width / deviceWidthDp
 }
 
-function styleTrans(obj) {
+export function styleTrans(obj) {
   if (!obj) return {}
   const newObj = JSON.parse(JSON.stringify(obj))
   Object.keys(newObj).forEach(k => {
@@ -38,7 +38,7 @@ function styleTrans(obj) {
 
 
 
-export function modifyStyleSheet(StyleSheet, Dimensions, size = 750) {
+export function initTrans(StyleSheet, Dimensions, size = 750) {
   deviceWidthDp = Dimensions.get('window').width;
   baseWidth = size
 
@@ -47,5 +47,4 @@ export function modifyStyleSheet(StyleSheet, Dimensions, size = 750) {
   StyleSheet.create = function (obj) {
     oldCreate.apply(StyleSheet, styleTrans(obj))
   }
-  Style
 }
